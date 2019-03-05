@@ -1,12 +1,12 @@
 {
-  "name": "sass_starter_pack",
+  "name": "rothko-generator",
   "version": "1.0.0",
-  "description": "Starter pack using gulp",
+  "description": "Random Rothko painting generator",
   "main": "index.js",
   "scripts": {
     "start": "gulp"
   },
-  "author": "Brad Traversy",
+  "author": "Evan Briolat",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.13",

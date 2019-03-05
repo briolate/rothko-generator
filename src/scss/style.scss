@@ -1,7 +1,67 @@
-$bg-color: #333;
-$color: #fff;
+@import './colors.scss';
+@import './animations.scss';
 
-body {
-    background: $bg-color;
-    color:$color;
+#canvas {
+  cursor: pointer;
+  width: 25rem;
+  height: 35rem;
+  margin: 3rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+}
+#inner {
+  width: 23rem;
+  height: 95%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.block {
+  cursor: pointer;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  @include transition(all 2s);
+}
+
+#buttons {
+  text-align: center;
+}
+
+@for $i from 1 through $block-variants {
+  .block--size-#{$i} {
+    @include flex-grow($i);
+  }
+}
+
+@for $i from 1 through $block-variants {
+  #canvas {
+    background-color: map-get($rothko-colors, $i);
+  }
+}
+
+@for $i from 1 through $block-variants {
+  .block--color-#{$i} {
+    background-color: map-get($rothko-colors, $i);
+    // box-shadow: 0px 0px 10px 10px map-get($rothko-colors, $i);
+  }
+}
+
+@for $i from 1 through $block-variants {
+  .block--spacing-#{$i} {
+    margin: ($i * 0.5px) 0;
+  }
+}
+
+#canvas {
+  @include transition(background-color 2s);
+}
+
+@for $i from 1 through $block-variants {
+  .canvas--color-#{$i}#canvas {
+    background-color: map-get($rothko-colors, $i);
+  }
 }
