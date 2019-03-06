@@ -34,4 +34,6 @@ img {
 body {
   background-image: url("/img/gallery.jpg");
   background-repeat: no-repeat;
-  background-position: center center; }
+  background-position: center center;
+  font-family: 'Avenir';
+  font-size: 14px; }

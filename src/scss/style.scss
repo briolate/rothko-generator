@@ -1,25 +1,30 @@
 @import './colors.scss';
 @import './animations.scss';
 
+.flex-container {
+  position: relative;
+  text-align: center;
+  min-width: 700px;
+}
+
 #canvas {
-  cursor: pointer;
   width: 25rem;
   height: 35rem;
-  margin: 3rem auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 3rem;
+  display: inline-block;
   -webkit-filter: blur(1px);
   filter: blur(1px);
+  text-align: center;
 }
+
 #inner {
-  width: 23rem;
-  height: 95%;
-  padding: 10px;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
 }
+
 .block {
   cursor: pointer;
   -webkit-filter: blur(5px);
@@ -28,7 +33,31 @@
 }
 
 #buttons {
-  text-align: center;
+  position: absolute;
+  top: 14rem;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+  font-size: 100%;
+  font-family: inherit;
+  padding: 10px;
+  background-color: #666666;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(255, 255, 255, 0.5) 0px 3px 3px;
+}
+
+button:hover {
+  background-color: #494848;
+}
+
+button:focus {
+  outline: none;
 }
 
 @for $i from 1 through $block-variants {
